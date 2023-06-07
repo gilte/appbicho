@@ -1,1 +1,764 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+<title>Terminal Online 3.0</title>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+<link rel="apple-touch-icon" sizes="57x57" href="/public/img/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/public/img/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/public/img/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/public/img/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/public/img/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/public/img/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/public/img/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/public/img/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/public/img/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/public/img/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/public/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/public/img/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/public/img/favicon/favicon-16x16.png">
+<link rel="manifest" href="/public/img/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/public/img/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/public/lib/bootstrap-4.5/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/public/lib/bootstrap-datepicker/css/datepicker.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="/public/css/custom.min.css?v=3.1.0" />
+<link rel="stylesheet" href="/public/css/base.min.css?v=3.1.0" />
+<link rel="stylesheet" href="/public/lib/OwlCarousel/owl.carousel.min.css">
+<link rel="stylesheet" href="/public/lib/OwlCarousel/owl.theme.default.min.css">
+
+<script src="/public/lib/jquery/jquery.min.js"></script>
+<script src="/public/lib/jquery-ui/jquery-ui.js"></script>
+<script src="/public/lib/bootstrap-4.5/js/bootstrap.min.js"></script>
+<script src="/public/lib/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script src="/public/lib/bootstrap-datepicker/js/locales/bootstrap-datepicker.pt-BR.js"></script>
+<script src="/sw.js?v=3.1.0"></script>
+<script src="/public/lib/jquery/plugins/jquery.meio.mask.min.js"></script>
+<script src="/public/lib/jquery-maskmoney/jquery.maskMoney.js"></script>
+<script src="/public/js/geral.min.js?v=3.1.0"></script>
+<script src="/public/js/main.min.js?v=3.1.0"></script>
+<script src="/public/js/inicial.min.js?v=3.1.0"></script>
+<script src="/public/js/notificacao.min.js?v=3.1.0"></script>
+<script src="/public/js/saldo.min.js?v=3.1.0"></script>
+<script src="/public/lib/OwlCarousel/owl.carousel.js"></script>
+
+<script src="/public/lib/jsPDF/src/jspdf.js"></script>
+<script src="/public/lib/jsPDF/src/html2canvas.min.js"></script>
+<script src="/public/lib/jsPDF/src/modules/autoprint.js"></script>
+<script src="/public/lib/jsPDF/src/modules/addimage.js"></script>
+<script src="/public/lib/jsPDF/src/modules/jpeg_support.js"></script>
+<script src="/public/lib/jsPDF/src/modules/png_support.js"></script>
+<script src="/public/lib/jsPDF/src/libs/png.js"></script>
+<script src="/public/lib/jsPDF/src/libs/zlib.js"></script>
+
+<script src="/public/lib/qrCodejs/qrcode.min.js"></script>
+
+<script src="/public/js/bilhete-util.min.js"></script>
+<link href="/public/css/index.min.css" media="screen" rel="stylesheet" type="text/css"><style type="text/css" media="screen">
+<!--
+.iconApp0{background: #7B1FA2}
+-->
+</style>
+<style type="text/css" media="screen">
+<!--
+.lineApp0{border: 1px solid #7B1FA2; color: #7B1FA2}
+-->
+</style>
+<style type="text/css" media="screen">
+<!--
+.iconApp1{background: #388E3C}
+-->
+</style>
+<style type="text/css" media="screen">
+<!--
+.lineApp1{border: 1px solid #388E3C; color: #388E3C}
+-->
+</style>
+<style type="text/css" media="screen">
+<!--
+.iconApp2{background: #FBC02D}
+-->
+</style>
+<style type="text/css" media="screen">
+<!--
+.lineApp2{border: 1px solid #FBC02D; color: #FBC02D}
+-->
+</style>
+<style type="text/css" media="screen">
+<!--
+.iconApp3{background: #455A64}
+-->
+</style>
+<style type="text/css" media="screen">
+<!--
+.lineApp3{border: 1px solid #455A64; color: #455A64}
+-->
+</style>
+<style type="text/css" media="screen">
+<!--
+.iconApp4{background: #616161}
+-->
+</style>
+<style type="text/css" media="screen">
+<!--
+.lineApp4{border: 1px solid #616161; color: #616161}
+-->
+</style>
+<style type="text/css" media="screen">
+<!--
+.iconApp5{background: #1976D2}
+-->
+</style>
+<style type="text/css" media="screen">
+<!--
+.lineApp5{border: 1px solid #1976D2; color: #1976D2}
+-->
+</style>
+<style type="text/css" media="screen">
+<!--
+.iconApp6{background: #D32F2F}
+-->
+</style>
+<style type="text/css" media="screen">
+<!--
+.lineApp6{border: 1px solid #D32F2F; color: #D32F2F}
+-->
+</style>
+<style type="text/css" media="screen">
+<!--
+.iconApp7{background: #00796B}
+-->
+</style>
+<style type="text/css" media="screen">
+<!--
+.lineApp7{border: 1px solid #00796B; color: #00796B}
+-->
+</style>
+<style type="text/css" media="screen">
+<!--
+.iconApp8{background: #512DA8}
+-->
+</style>
+<style type="text/css" media="screen">
+<!--
+.lineApp8{border: 1px solid #512DA8; color: #512DA8}
+-->
+</style>
+<style type="text/css" media="screen">
+<!--
+.iconApp9{background: #BF360C}
+-->
+</style>
+<style type="text/css" media="screen">
+<!--
+.lineApp9{border: 1px solid #BF360C; color: #BF360C}
+-->
+</style>
+<style type="text/css" media="screen">
+<!--
+.iconApp10{background: #C2185B}
+-->
+</style>
+<style type="text/css" media="screen">
+<!--
+.lineApp10{border: 1px solid #C2185B; color: #C2185B}
+-->
+</style><script type="text/javascript" src="/public/js/notificacao-service.min.js"></script>
+<link rel="stylesheet" href="/public/css/base-tema-verde.min.css" />
+<script type="text/javascript">
+        $(function() {
+            if (typeof Notificacao !== 'undefined') {
+                Notificacao.init();
+            }
+
+                            if (typeof Saldo !== 'undefined') {
+                    Saldo.init();
+                }
+                    });
+    </script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PQBRC58BM6"></script>
+<script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-PQBRC58BM6');
+        </script>
+</head>
+<body>
+<div class="barra-superiror-notificacao"></div>
+<input type="hidden" id="siglaSite" value="" />
+<header class="content">
+<div class="btn-menu"></div>
+<a data-ajax="false" class="logo" href="/">
+Banca Avanti Apps </a>
+<div class="right">
+<div class="infoTerminal ">
+<strong>90785.5227</strong><br>
+<strong>07/06 17:02</strong>
+</div>
+<a class="btLogout" href="/login/logout?fecharApp=SIM" data-ajax="false">
+Sair <i class="bi bi-box-arrow-right"></i>
+<span>Ver. 3.1.0</span>
+</a>
+</div>
+</header>
+<main class="content">
+<div class="title-page">
+Início </div>
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div id="meio" role="main">
+<script type="text/javascript">
+    $(function() {
+        $(document).ready(function() {
+            // LcLastAtt.init();
+            // LcLastAtt.verificaAlerta();
+            // LcLastAtt.verificarComunicado();
+        });
+    });
+</script>
+<div class="content-row" role="index-list">
+<div class="bx-saldo">
+<div class="row">
+<div class="col bx-border">
+<div class="bx-left">
+R$ -,--<br>
+<span>Crédito</span>
+</div>
+</div>
+<div class="col">
+<div class="bx-right">
+R$ -,--
+<span>Prêmio</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bx-bonus t-center">
+<div class="row">
+<div class="col">
+<span>Bônus:</span>
+<div class="valor-saldo">
+R$ -,--
+</div>
+</div>
+</div>
+</div>
+<div class="bx-nav-opc">
+<a href="/bilhete/minhas-apostas">
+<div class="img-nav">
+<script type="text/javascript" style="display:none">
+//<![CDATA[
+window.__mirage2 = {petok:"_3pyT8EuKQfHrbHWJdn9AsPsaNiNOmIFJSNKdoGWEAc-1800-0"};
+//]]>
+</script>
+<script type="text/javascript" src="https://ajax.cloudflare.com/cdn-cgi/scripts/04b3eb47/cloudflare-static/mirage2.min.js"></script>
+<img data-cfsrc="/public/img/generic/icons/icon-home-bilhete.png" style="display:none;visibility:hidden;" /><noscript><img src="/public/img/generic/icons/icon-home-bilhete.png" /></noscript>
+</div>
+<div class="titulo">Minhas<br />Apostas</div>
+</a>
+<a href="/premiacao">
+<div class="img-nav">
+<img data-cfsrc="/public/img/generic/icons/icon-home-premiacao.png" style="display:none;visibility:hidden;" /><noscript><img src="/public/img/generic/icons/icon-home-premiacao.png" /></noscript>
+</div>
+<div class="titulo">Minhas<br />Premiações</div>
+</a>
+<a href="/extrato">
+<div class="img-nav">
+<img data-cfsrc="/public/img/generic/icons/icon-home-extrato.png" style="display:none;visibility:hidden;" /><noscript><img src="/public/img/generic/icons/icon-home-extrato.png" /></noscript>
+</div>
+<div class="titulo">Meu<br />Extrato</div>
+</a>
+<a href="/compra-credito">
+<div class="img-nav">
+<img data-cfsrc="/public/img/generic/icons/icon-home-creditos.png" style="display:none;visibility:hidden;" /><noscript><img src="/public/img/generic/icons/icon-home-creditos.png" /></noscript>
+</div>
+<div class="titulo">Comprar<br />Créditos</div>
+</a>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<input type="hidden" class="dadosFone" />
+<div id="apps" class="app-index">
+<div class="bx-produto iconApp0">
+<a href="/produto10" data-ajax="false">
+<div class="iconApp lineApp0">
+<img data-cfsrc="/public/img/generic/icons/produto10.png" style="display:none;visibility:hidden;"><noscript><img src="/public/img/generic/icons/produto10.png"></noscript>
+</div>
+<div class="titulo-produto lineApp0">QUININHA</div>
+</a>
+</div>
+<div class="bx-produto iconApp1">
+<a href="/produto5" data-ajax="false">
+<div class="iconApp lineApp1">
+<img data-cfsrc="/public/img/generic/icons/produto5.png" style="display:none;visibility:hidden;"><noscript><img src="/public/img/generic/icons/produto5.png"></noscript>
+</div>
+<div class="titulo-produto lineApp1">SUPER 5</div>
+</a>
+</div>
+<div class="bx-produto iconApp2">
+<a href="/produto9" data-ajax="false">
+<div class="iconApp lineApp2">
+<img data-cfsrc="/public/img/generic/icons/produto9.png" style="display:none;visibility:hidden;"><noscript><img src="/public/img/generic/icons/produto9.png"></noscript>
+</div>
+<div class="titulo-produto lineApp2">SENINHA</div>
+</a>
+</div>
+<div class="bx-produto iconApp3">
+<a href="/produto6" data-ajax="false">
+<div class="iconApp lineApp3">
+<img data-cfsrc="/public/img/generic/icons/produto6.png" style="display:none;visibility:hidden;"><noscript><img src="/public/img/generic/icons/produto6.png"></noscript>
+</div>
+<div class="titulo-produto lineApp3">SURPRESINHA</div>
+</a>
+</div>
+<div class="bx-produto iconApp4">
+<a href="/produto3" data-ajax="false">
+<div class="iconApp lineApp4">
+<img data-cfsrc="/public/img/generic/icons/produto3.png" style="display:none;visibility:hidden;"><noscript><img src="/public/img/generic/icons/produto3.png"></noscript>
+</div>
+<div class="titulo-produto lineApp4">SUPER 5</div>
+</a>
+</div>
+<div class="bx-produto iconApp5">
+<a href="/produto7/jogar" data-ajax="false">
+<div class="iconApp lineApp5">
+<img data-cfsrc="/public/img/generic/icons/produto7.png" style="display:none;visibility:hidden;"><noscript><img src="/public/img/generic/icons/produto7.png"></noscript>
+</div>
+<div class="titulo-produto lineApp5">APOSTAS ESPORTIVAS</div>
+</a>
+</div>
+<div class="bx-produto iconApp6">
+<a href="/produto11" data-ajax="false">
+<div class="iconApp lineApp6">
+<img data-cfsrc="/public/img/generic/icons/produto11.png" style="display:none;visibility:hidden;"><noscript><img src="/public/img/generic/icons/produto11.png"></noscript>
+</div>
+<div class="titulo-produto lineApp6">RAPIDINHA</div>
+</a>
+</div>
+<div class="bx-produto iconApp7">
+<a href="/produto13" data-ajax="false">
+<div class="iconApp lineApp7">
+<img data-cfsrc="/public/img/generic/icons/26-da-sorte.png" style="display:none;visibility:hidden;"><noscript><img src="/public/img/generic/icons/26-da-sorte.png"></noscript>
+</div>
+<div class="titulo-produto lineApp7">26 DA SORTE</div>
+</a>
+</div>
+<div class="bx-produto iconApp8">
+<a href="/produto1" data-ajax="false">
+<div class="iconApp lineApp8">
+<img data-cfsrc="/public/img/generic/icons/produto1.png" style="display:none;visibility:hidden;"><noscript><img src="/public/img/generic/icons/produto1.png"></noscript>
+</div>
+ <div class="titulo-produto lineApp8">TRADICIONAL</div>
+</a>
+</div>
+<div class="bx-produto iconApp9">
+<a href="/produto12" data-ajax="false">
+<div class="iconApp lineApp9">
+<img data-cfsrc="/public/img/generic/icons/quiniela.png" style="display:none;visibility:hidden;"><noscript><img src="/public/img/generic/icons/quiniela.png"></noscript>
+</div>
+<div class="titulo-produto lineApp9">QUINELA</div>
+</a>
+</div>
+<div class="bx-produto iconApp10">
+<a href="/produto19" data-ajax="false">
+<div class="iconApp lineApp10">
+<img data-cfsrc="/public/img/generic/icons/produto19.png" style="display:none;visibility:hidden;"><noscript><img src="/public/img/generic/icons/produto19.png"></noscript>
+</div>
+<div class="titulo-produto lineApp10">LOTINHA</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<div id="left-panel">
+<div id="userinfo">
+<span class="foto"></span>
+<div class="userdata">
+Revendedor
+90785 <br>
+<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ffc6cfc8c7cabfcec6cfd19c9092">[email&#160;protected]</a>
+<br>(91) 9 8043 - 2048 </div>
+<div class="btn-fechar">
+<i class="bi bi-x-circle-fill"></i>
+</div>
+</div>
+<div class="bx-saldo">
+<div class="row">
+<div class="col bx-border">
+<div class="bx-left">
+R$ -,--<br>
+<span>Crédito</span>
+</div>
+</div>
+<div class="col">
+<div class="bx-right">
+R$ -,--
+<span>Prêmio</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bx-bonus">
+<div class="row">
+<div class="col">
+<span>Bônus:</span>
+<div class="valor-saldo">
+R$ -,--
+</div>
+</div>
+</div>
+</div>
+<ul id="menu_navigator">
+<li>
+<a href="/" class="">
+Inicio
+</a>
+</li>
+<li>
+<a href="#" class="click-move" id="menu-jogar">
+Jogar
+</a>
+</li>
+<li>
+<a href="#" class="click-move" id="submenu-consultas">
+Resultados
+</a>
+</li>
+<li>
+<a href="#" class="click-move" id="submenu-bilhete">
+Bilhete
+</a>
+</li>
+<li>
+<a href="#" class="click-move" id="submenu-financeiro">
+Financeiro
+</a>
+</li>
+<li>
+<a href="#" class="click-move" id="submenu-carteiravirtual">
+Carteira Virtual
+</a>
+</li>
+<li>
+<a href="/config">
+Configuração
+</a>
+</li>
+</ul>
+<div class="development">
+<img src="/public/img/generic/logo-sysloto.svg">
+<span>
+© Development Powered By: SYSLOTO
+</span>
+</div>
+</div>
+<div id="main-sub-menu">
+<div class="fechar-sub-menu">
+<i class="bi bi-x"></i>
+</div>
+<div class="links-menu" id="submenu-jogar">
+<div class="titulo">
+Jogar
+</div>
+<a href="/produto10" data-ajax="false">
+Quininha </a>
+<a href="/produto5" data-ajax="false">
+Super 5 </a>
+<a href="/produto9" data-ajax="false">
+Seninha </a>
+<a href="/produto6" data-ajax="false">
+Surpresinha </a>
+<a href="/produto3" data-ajax="false">
+Super 5 </a>
+<a href="/produto7/jogar" data-ajax="false">
+Apostas Esportivas </a>
+<a href="/produto11" data-ajax="false">
+Rapidinha </a>
+<a href="/produto13" data-ajax="false">
+26 Da Sorte </a>
+<a href="/produto1" data-ajax="false">
+Tradicional </a>
+<a href="/produto12" data-ajax="false">
+Quinela </a>
+<a href="/produto19" data-ajax="false">
+Lotinha </a>
+</div>
+<div class="links-menu" id="submenu-financeiro">
+<div class="titulo">
+Financeiro
+</div>
+<a href="/extrato" class="">Extrato</a>
+
+<a href="/pre-caixa/cadastro" class="">Caixa</a>
+<a href="/pre-caixa" class="">Imprime Pré Caixa</a>
+<a href="/pagamento-premio" class="">Validação de Prêmios</a>
+<a href="/compra-credito" class="">Compra de Crédito</a>
+<a href="/premiacao" class="">Premiações</a>
+<a href="/conta-bancaria" class="">Conta Bancária</a>
+<a href="/milhar-extra" class="">Consulta de Milhar Brinde</a>
+</div>
+<div class="links-menu" id="submenu-consultas">
+<div class="titulo">
+Resultados
+</div>
+<a href="/resultado" class="">Resultado</a>
+ <a href="/produto7/resultado" class="">Resultado AE</a>
+
+</div>
+<div class="links-menu" id="submenu-sorteios">
+<div class="titulo">
+Sorteios
+</div>
+<a href=https://app3.sysloto.com/redireciona/super20?r=190 target="_blank" class="abrir-link-navegador">Super 20</a>
+</div>
+<div class="links-menu" id="submenu-bilhete">
+<div class="titulo">
+Bilhete
+</div>
+<a href="/bilhete/buscar" class="">Buscar Bilhete</a>
+<a href="/bilhete/reimprime" class="">Reemitir Bilhete</a>
+<a href="/produto1/jogar/agendamento" class="">Aposta Agendada</a>
+<a href="/prebilhete" class="">Pré Bilhete Busca</a>
+<a href="/bilhete/minhas-apostas" class="">Minhas Apostas</a>
+</div>
+<div class="links-menu" id="submenu-carteiravirtual">
+<div class="titulo">
+Carteira Virtual
+</div>
+<a href="/carteira-virtual/jogo-vinculado">Jogo Vinculado</a>
+<a href="/carteira-virtual/cadastro-cliente">Cadastro de Cliente</a>
+<a href="/carteira-virtual/lancamento-pagamento">Lançamento de Pagamentos</a>
+<a href="/carteira-virtual/extrato-carteira">Extrato da Carteira</a>
+</div>
+</div>
+<div id="right-panel">
+<div class="push-right">
+<div class="slide-bilhete"></div>
+</div>
+<div class="corpo">
+<div class="botoes-confirmacao-aposta botoes-container" style="display: none;">
+<div class="title-button">
+O comprovante foi gerado corretamente?
+</div>
+<div class="colun">
+<button type="button" class="btn-voltar">Não</button>
+</div>
+<div class="colun">
+<button type="button" class="btn-confirmar">Sim</button>
+</div>
+</div>
+<div class="botoes-aposta-finalizada botoes-container" style="display: none;">
+<div class="linhaBotoes">
+<div class="colun imprimir" style="display: none;">
+<button class="btn-action">
+Imprimir
+</button>
+</div>
+<div class="colun limpar">
+<button class="btn-action">
+Limpar
+</button>
+</div>
+<div class="colun compartilhar-bilhete" style="display: none;">
+<button data-toggle="modal" class="btn-action">
+Compartilhar
+</button>
+</div>
+<div class="colun voltarCarteira" style="display: none;">
+<button class="btn-action">
+Carteira
+</button>
+</div>
+</div>
+</div>
+<div class="botoes-resultado botoes-container" style="display: none;">
+<div class="linhaBotoes">
+<div class="colun imprimir" style="display: none;">
+<button class="btn-action">
+Imprimir
+</button>
+</div>
+<div class="colun limpar">
+<button class="btn-action">
+Limpar
+</button>
+</div>
+<div class="colun compartilhar-bilhete" style="display: none;">
+<button data-toggle="modal" class="btn-action">
+Compartilhar
+</button>
+</div>
+</div>
+</div>
+<div class="botoes-extrato botoes-container" style="display: none;">
+<div class="linhaBotoes">
+<div class="colun imprimir">
+<button class="btn-action">
+Imprimir
+</button>
+</div>
+<div class="colun limpar">
+<button class="btn-action">
+Limpar
+</button>
+</div>
+</div>
+</div>
+<div class="botoes-bonus botoes-container" style="display: none;">
+<div class="linhaBotoes">
+<div class="colun imprimir">
+<button class="btn-action">
+Imprimir
+</button>
+</div>
+<div class="colun limpar">
+<button class="btn-action">
+Limpar
+</button>
+</div>
+</div>
+</div>
+<div class="botoes-total-geral botoes-container" style="display: none;">
+<div class="linhaBotoes">
+<div class="colun imprimir">
+<button class="btn-action">
+Imprimir
+</button>
+</div>
+<div class="colun limpar">
+<button class="btn-action">
+Limpar
+</button>
+</div>
+</div>
+</div>
+<div class="botoes-fita-caixa botoes-container" style="display: none;">
+<div class="linhaBotoes">
+<div class="colun imprimir">
+<button class="btn-action">
+Imprimir
+</button>
+</div>
+<div class="colun limpar">
+<button class="btn-action">
+Limpar
+</button>
+</div>
+</div>
+</div>
+<div class="botoes-pre-caixa botoes-container" style="display: none;">
+<div class="linhaBotoes">
+<div class="colun imprimir">
+<button class="btn-action">
+Imprimir
+</button>
+</div>
+<div class="colun limpar">
+<button class="btn-action">
+Limpar
+</button>
+</div>
+</div>
+</div>
+<div class="botoes-pagamento botoes-container" style="display: none;">
+<div class="linhaBotoes">
+<div class="colun imprimir">
+<button class="btn-action">
+Imprimir
+</button>
+</div>
+<div class="colun limpar">
+<button class="btn-action">
+Limpar
+</button>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="bilhete">
+<div class="top">
+LOTERIA ONLINE
+</div>
+<div class="body">
+<h3>Nenhum Bilhete</h3>
+</div>
+<div class="bottom">
+Total: <strong>0,00</strong>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<div class="modal fade" id="popupCloseRight" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="staticBackdropLabel">Atenção</h5>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="text"></div>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+</div>
+</div>
+</div>
+</div>
+<div class="modal" id="popupLoading" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
+<div class="modal-body">
+<div class="loading-spinner">
+<div class="clover">
+<div class="leaf leaf-a"></div>
+<div class="leaf leaf-b"></div>
+<div class="leaf leaf-c"></div>
+<div class="leaf leaf-d"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade bs-example-modal-sm" id="popupConfirm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
+<div class="modal-body">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+</button>
+<div class="text"></div>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-default btn-nao" data-dismiss="modal">Não</button>
+<button type="button" class="btn btn-info btn-sim">Sim</button>
+</div>
+</div>
+</div>
+</div>
+</html>
